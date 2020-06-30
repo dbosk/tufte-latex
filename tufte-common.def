@@ -64,6 +64,12 @@
 \DeclareOptionX[tufte]<common>{b5paper}{\setboolean{@tufte@bfivepaper}{true}}
 
 %%
+% `g5paper' option
+
+\newboolean{@tufte@gfivepaper}
+\DeclareOptionX[tufte]<common>{g5paper}{\setboolean{@tufte@gfivepaper}{true}}
+
+%%
 % `sfsidenotes' option -- typesets sidenotes in sans serif typeface
 
 \newboolean{@tufte@sfsidenotes}
@@ -451,6 +457,10 @@
 
 \ifthenelse{\boolean{@tufte@bfivepaper}}
   {\geometry{paperwidth=176mm,paperheight=250mm,left=14.66mm,top=13.88mm,textwidth=102.66mm,marginparsep=7.33mm,marginparwidth=36.66mm,textheight=38\baselineskip,includehead}}
+  {}
+
+\ifthenelse{\boolean{@tufte@gfivepaper}}
+  {\geometry{paperwidth=169mm,paperheight=239mm,left=14.66mm,top=13.88mm,textwidth=102.66mm,marginparsep=4.00mm,marginparwidth=37.66mm,textheight=38\baselineskip,includehead}}
   {}
 
 \ifthenelse{\boolean{@tufte@symmetric}}
@@ -1507,6 +1517,7 @@
   \typeout{Class options:}
   \typeoutbool{a4paper}{@tufte@afourpaper}
   \typeoutbool{b5paper}{@tufte@bfivepaper}
+  \typeoutbool{g5paper}{@tufte@gfivepaper}
   \typeoutbool{load fonts}{@tufte@loadfonts}
   \typeoutbool{fully-justified}{@tufte@justified}
   \typeoutbool{letterspacing}{@tufte@letterspace}
